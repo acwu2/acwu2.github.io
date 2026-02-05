@@ -1,0 +1,197 @@
+/* Reset & Base Styles */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg: #fafafa;
+    --color-text: #1a1a1a;
+    --color-text-muted: #666;
+    --color-accent: #0066cc;
+    --color-border: #e5e5e5;
+    --color-card-bg: #fff;
+    --font-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --max-width: 720px;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-base);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Layout */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-lg) var(--spacing-md);
+    flex: 1;
+}
+
+section {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Typography */
+h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--spacing-xs);
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-md);
+}
+
+h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+}
+
+p {
+    color: var(--color-text-muted);
+    max-width: 60ch;
+}
+
+/* Hero Section */
+.hero {
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.tagline {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+}
+
+/* About Section */
+.about p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+
+/* Projects Section */
+.project-grid {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.project-card {
+    display: block;
+    padding: var(--spacing-md);
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.project-card h3 {
+    color: var(--color-text);
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Contact Section */
+.social-links {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.social-links a:hover {
+    border-bottom-color: var(--color-accent);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+}
+
+footer p {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    html {
+        font-size: 15px;
+    }
+
+    main {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    .hero {
+        padding: var(--spacing-lg) 0;
+    }
+
+    section {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .social-links {
+        gap: var(--spacing-sm);
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #0a0a0a;
+        --color-text: #fafafa;
+        --color-text-muted: #a0a0a0;
+        --color-accent: #66b3ff;
+        --color-border: #2a2a2a;
+        --color-card-bg: #141414;
+    }
+}
